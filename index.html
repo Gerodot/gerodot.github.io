@@ -5,14 +5,20 @@
 		<title>Gerasimof.</title>
 		<style>
 			@font-face {
-				font-family: 'Gilroy';
-				src: local('Gilroy Light'), local('Gilroy-Light'), url('Gilroylight.woff2') format('woff2'), url('Gilroylight.woff') format('woff'), url('Gilroylight.ttf') format('truetype');
+				font-family: "Gilroy";
+				src: local("Gilroy Light"), local("Gilroy-Light"),
+					url("Gilroylight.woff2") format("woff2"),
+					url("Gilroylight.woff") format("woff"),
+					url("Gilroylight.ttf") format("truetype");
 				font-weight: 300;
 				font-style: normal;
 			}
 			@font-face {
-				font-family: 'Gilroy';
-				src: local('Gilroy ExtraBold'), local('Gilroy-ExtraBold'), url('Gilroyextrabold.woff2') format('woff2'), url('Gilroyextrabold.woff') format('woff'), url('Gilroyextrabold.ttf') format('truetype');
+				font-family: "Gilroy";
+				src: local("Gilroy ExtraBold"), local("Gilroy-ExtraBold"),
+					url("Gilroyextrabold.woff2") format("woff2"),
+					url("Gilroyextrabold.woff") format("woff"),
+					url("Gilroyextrabold.ttf") format("truetype");
 				font-weight: 800;
 				font-style: normal;
 			}
@@ -20,9 +26,10 @@
 				font-family: Gilroy, Arial, Helvetica, sans-serif;
 				font-weight: 300;
 				background: #fafafa;
-				color: #5b5b5b
+				color: #5b5b5b;
 			}
-			h1  {
+
+			h1 {
 				font-size: 5em;
 				margin: auto;
 				font-weight: 900;
@@ -33,6 +40,12 @@
 				font-weight: 300;
 				margin: auto;
 			}
+
+			.container {
+				max-width: 820px;
+				margin: auto;
+			}
+
 			.hero {
 				min-width: 100%;
 			}
@@ -65,11 +78,11 @@
 			}
 			.love {
 				color: red;
-				font-size: 1em
+				font-size: 1em;
 			}
 			.line {
 				display: inline-block;
-				width:20em;
+				width: 20em;
 			}
 			.padding {
 				padding: 20px;
@@ -77,49 +90,59 @@
 		</style>
 	</head>
 	<body>
-		<section class="hero">
-			<div class="HELLO">
-				<span style=""><h1 class="logo">Gerasimof.</h1></span>
-				<hr class="line" />
-				<span><h2>design | code | AR | VR</h2></span>
-				<a href="https://t.me/igerodot">send message</a>
-				<p class="signature">
-					Crafted with <span class="love">♥︎</span> in Moscow
-				</p>
-			</div>
-		</section>
-		<section>
-			<div class="padding">
-				<!-- Include the library. -->
-				<script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
-
-				<!-- Optionally, include the theme (if you don't want to struggle to write the CSS) -->
-				<link
-					rel="stylesheet"
-					href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
-				/>
-
-				<!-- Prepare a container for your calendar. -->
-				<div class="calendar">
-					<!-- Loading stuff -->
-					Loading the data just for you.
+		<div class="container">
+			<section class="hero">
+				<div class="HELLO">
+					<span style=""><h1 class="logo">Gerasimof.</h1></span>
+					<hr class="line" />
+					<span><h2>design | code | AR | VR</h2></span>
+					<a href="https://t.me/igerodot">send message</a>
+					<p class="signature">
+						Crafted with <span class="love">♥︎</span> in Moscow
+					</p>
 				</div>
+			</section>
 
-				<script>
-					GitHubCalendar(".calendar", "gerodot");
+			<section>
+				<div class="padding">
+					<!-- Include the library. -->
+					<script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
 
-					// or enable responsive functionality:
-					GitHubCalendar(".calendar", "gerodot", { responsive: true });
+					<!-- Optionally, include the theme (if you don't want to struggle to write the CSS) -->
+					<link
+						rel="stylesheet"
+						href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
+					/>
 
-					// Use a proxy
-					GitHubCalendar(".calendar", "gerodot", {
-						proxy(username) {
-							return fetch(`https://your-proxy.com/github?user=${username}`);
-						},
-					}).then((r) => r.text());
-				</script>
-			</div>
-		</section>
+					<style>
+						.calendar,
+						.contrib-column {
+							border: none;
+						}
+					</style>
+
+					<!-- Prepare a container for your calendar. -->
+					<div class="calendar">
+						<!-- Loading stuff -->
+						Loading the data just for you.
+					</div>
+
+					<script>
+						GitHubCalendar(".calendar", "gerodot");
+
+						// or enable responsive functionality:
+						GitHubCalendar(".calendar", "gerodot", { responsive: true });
+
+						// Use a proxy
+						GitHubCalendar(".calendar", "gerodot", {
+							proxy(username) {
+								return fetch(`https://your-proxy.com/github?user=${username}`);
+							},
+						}).then((r) => r.text());
+					</script>
+				</div>
+			</section>
+		</div>
 		<div class="design"></div>
 		<div class="code"></div>
 		<div class="vr"></div>
