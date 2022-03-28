@@ -131,17 +131,17 @@
 				</div>
 
 				<script>
-					GitHubCalendar(".calendar", "gerodot");
+					// GitHubCalendar(".calendar", "gerodot");
 
 					// or enable responsive functionality:
 					GitHubCalendar(".calendar", "gerodot", { responsive: true });
 
 					// Use a proxy
-					GitHubCalendar(".calendar", "gerodot", {
-						proxy(username) {
-							return fetch(`https://your-proxy.com/github?user=${username}`);
-						},
-					}).then((r) => r.text());
+					// GitHubCalendar(".calendar", "gerodot", {
+					//	proxy(username) {
+					//		return fetch(`https://your-proxy.com/github?user=${username}`);
+					//	},
+					// }).then((r) => r.text());
 				</script>
 			</section>
 
